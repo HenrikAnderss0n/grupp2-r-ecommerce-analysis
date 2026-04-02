@@ -1,0 +1,1 @@
+# grupp2-r-ecommerce-analysis
