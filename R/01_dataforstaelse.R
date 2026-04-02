@@ -19,8 +19,5 @@ colSums(is.na(df))
 # De första 10 raderna
 head(df, 10)
 
-# För vår analys verkar customer_segment, customer_type, product_category,
-# quantity, unit_price, discount_pct, shipping_days och returned vara viktigast.
-# Vi ser också att vissa variabler har saknade värden som behöver hanteras i nästa steg.
 
 

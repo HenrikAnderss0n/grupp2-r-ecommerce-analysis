@@ -1,0 +1,7 @@
+## Dataförståelse
+
+Datasetet innehåller 1000 rader och 16 kolumner. Variablerna består av kategorivariabler, numeriska variabler och en datumvariabel.
+
+För vår analys verkar customer_segment, customer_type, product_category, quantity, unit_price, discount_pct, shipping_days och returned vara särskilt viktiga. Dessa variabler är relevanta eftersom de kan användas för att undersöka kundgrupper, försäljning, rabatter, leveranstid och returer.
+
+Vi ser också att det finns saknade värden i variablerna city, payment_method, campaign_source, discount_pct och shipping_days. Dessa behöver hanteras i nästa steg av analysen.
