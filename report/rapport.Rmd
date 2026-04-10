@@ -8,3 +8,4 @@ output:
 
 
 # Introduktion till datan
+Målet med denna analys är att vägleda beslutsfattande utifrån försäljningsdata från orter runt om i Sverige.Datan bestod av 1000 unika beställningar från 255 kunder, inklusive privatpersoner, företag och småföretag.

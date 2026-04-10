@@ -32,6 +32,7 @@ summary(df_clean)
 unique(df_clean$city)
 unique(df_clean$payment_method)
 unique(df_clean$campaign_source)
+length(unique(df_clean$customer_id))
 
 # Saknade värden:
 # kategoriska variabler ersätts med "Unknown"
