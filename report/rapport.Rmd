@@ -1,0 +1,10 @@
+---
+title: "e-handelsanalysrapport"
+author: "Grupp"
+date: "10/04/2026"
+output:
+  word_document: default
+---
+
+
+# Introduktion till datan
