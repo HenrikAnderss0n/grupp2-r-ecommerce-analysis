@@ -34,6 +34,9 @@ flextable(sales_by_category)%>%
 
 ```
 
+```{r, echo=FALSE, out.width="50%"}
+knitr::include_graphics(here::here("fig1.png"))
+```
 Electronics har högst total försäljning (155500), följt av Home och Sports.
 
 
@@ -45,6 +48,9 @@ flextable(sales_by_segment)%>%
   theme_vanilla()
 ```
 
+```{r, echo=FALSE, out.width="50%"}
+knitr::include_graphics(here::here("fig2.png"))
+```
 Consumer genererar mest total försäljning (170338), medan Small Business spenderar mest per köp (346). Corporate bidrar minst både i antal ordrar (169) och total försäljning (39744).
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
@@ -55,6 +61,10 @@ flextable(sales_by_region)%>%
   autofit()%>%
   theme_vanilla()
 
+```
+
+```{r, echo=FALSE, out.width="50%"}
+knitr::include_graphics(here::here("fig3.png"))
 ```
 North är den region som säljer mest totalt (116544) och har flest ordrar (354), medan East har högre värde per köp (337). South säljer minst (53170) och har också lägre värde (277) per köp än andra regioner.
 
