@@ -1,10 +1,11 @@
+library(here)
 library(tidyverse)
 
-df <- read_csv("data/ecommerce_orders.csv")
+df_raw <- read_csv(here("data", "ecommerce_orders.csv"))
 
-dim(df)
-names(df)
-glimpse(df)
-colSums(is.na(df))
-head(df, 10)
+dim(df_raw)
+names(df_raw)
+glimpse(df_raw)
+colSums(is.na(df_raw))
+head(df_raw, 10)
 
