@@ -2,8 +2,8 @@
 title: "e-handelsanalysrapport"
 author: "Grupp 2"
 date: "10/04/2026"
-output: 
-  word_document: default
+output:
+  word_document: default 
 ---
 
 
@@ -31,9 +31,11 @@ source(here("R", "03_statistiska_sammanfattningar.R"))
 flextable(sales_by_category)%>%
   autofit()%>%
   theme_vanilla()
+
 ```
 
 Electronics har högst total försäljning (155500), följt av Home och Sports.
+
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
@@ -42,6 +44,7 @@ flextable(sales_by_segment)%>%
   autofit()%>%
   theme_vanilla()
 ```
+
 Consumer genererar mest total försäljning (170338), medan Small Business spenderar mest per köp (346). Corporate bidrar minst både i antal ordrar (169) och total försäljning (39744).
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
@@ -54,6 +57,7 @@ flextable(sales_by_region)%>%
 
 ```
 North är den region som säljer mest totalt (116544) och har flest ordrar (354), medan East har högre värde per köp (337). South säljer minst (53170) och har också lägre värde (277) per köp än andra regioner.
+
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
