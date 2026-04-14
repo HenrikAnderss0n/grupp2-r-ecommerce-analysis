@@ -8,7 +8,8 @@ sales_by_category <- df_clean %>%
     avg_order = mean(order_value, na.rm = TRUE),
     median_order = median(order_value, na.rm = TRUE),
     total_sales = sum(order_value, na.rm = TRUE),
-    orders = n()
+    orders = n(),
+    .groups = "drop"
   ) %>% 
   arrange(desc(total_sales))
 
@@ -26,7 +27,8 @@ sales_by_segment <- df_clean %>%
     avg_order = mean(order_value, na.rm = TRUE),
     median_order = median(order_value, na.rm = TRUE),
     total_sales = sum(order_value, na.rm = TRUE),
-    orders = n()
+    orders = n(),
+    .groups = "drop"
   ) %>% 
   arrange(desc(total_sales))
 
@@ -45,7 +47,8 @@ sales_by_region <- df_clean %>%
   summarise(
     total_sales = sum(order_value, na.rm = TRUE),
     avg_order = mean(order_value, na.rm = TRUE),
-    orders = n()
+    orders = n(),
+    .groups = "drop"
   ) %>% 
   mutate(
     sales_percent = (total_sales / sum(total_sales))*100 
