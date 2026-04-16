@@ -3,6 +3,7 @@ title: "e-handelsanalysrapport"
 author: "Grupp 2"
 date: "10/04/2026"
 output:
+  pdf_document: default
   word_document: default
 ---
 
@@ -34,7 +35,7 @@ flextable(sales_by_category)%>%
 
 ```
 
-```{r, echo=FALSE, out.width="50%", fig.width=8, fig.height=5}
+```{r, echo=FALSE, out.width="50%", fig.width=16, fig.height=8}
 knitr::include_graphics(here::here("fig1.png"))
 ```
 
@@ -49,7 +50,7 @@ flextable(sales_by_segment)%>%
   theme_vanilla()
 ```
 
-```{r, echo=FALSE, out.width="50%",fig.width=8, fig.height=5}
+```{r, echo=FALSE, out.width="50%",fig.width=16, fig.height=8}
 knitr::include_graphics(here::here("fig2.png"))
 ```
 
@@ -65,7 +66,7 @@ flextable(sales_by_region)%>%
 
 ```
 
-```{r, echo=FALSE, out.width="50%",fig.width=8, fig.height=5}
+```{r, echo=FALSE, out.width="50%",fig.width=16, fig.height=8}
 knitr::include_graphics(here::here("fig3.png"))
 ```
 
@@ -90,3 +91,4 @@ Vi har beräknat statistiska sammanfattningar för att jämföra försäljning.
 
 
 # Vilka begränsningar som finns i datan eller analysen
+Analysen bygger på ett dataset med 1000 ordrar och visar därför bara mönster i detta urval. Vissa värden saknades i datan och har ersatts vid datastädningen, vilket kan påverka resultaten något.
