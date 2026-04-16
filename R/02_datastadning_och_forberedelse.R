@@ -1,12 +1,15 @@
-unique(df$city)
+library(here)
+source(here("R", "01_dataforstaelse.R"))
+df_raw
+unique(df_raw$city)
 
-unique(df$payment_method)
+unique(df_raw$payment_method)
 
-unique(df$campaign_source)
+unique(df_raw$campaign_source)
 
 # Datastädning
 
-df_clean <- df %>%
+df_clean <- df_raw %>%
   mutate(
     city = str_trim(city),
     city = str_to_title(city),
@@ -32,6 +35,9 @@ summary(df_clean)
 unique(df_clean$city)
 unique(df_clean$payment_method)
 unique(df_clean$campaign_source)
+length(unique(df_clean$customer_id))
+length(unique(df_clean$order_id))
+unique(df_clean$customer_segment)
 
 # Saknade värden:
 # kategoriska variabler ersätts med "Unknown"
