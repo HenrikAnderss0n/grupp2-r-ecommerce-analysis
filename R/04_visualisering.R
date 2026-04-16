@@ -1,5 +1,5 @@
 library(tidyverse)
-
+library(here)
 source(here("R","01_dataforstaelse.R"))
 source(here("R", "02_datastadning_och_forberedelse.R"))
 

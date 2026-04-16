@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.7)  10 APR 2026 11:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.7)  16 APR 2026 10:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -180,8 +180,83 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
 \Gin@req@width=\dimen157
 )
 \pandoc@box=\box52
+(c:/Users/chn03/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip52
+\multirow@cntb=\count272
+\multirow@dima=\skip53
+\bigstrutjot=\dimen158
+) (c:/Users/chn03/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2021/10/28 v1.9b multicolumn formatting (FMi)
+\c@tracingmulticols=\count273
+\mult@box=\box53
+\multicol@leftmargin=\dimen159
+\c@unbalance=\count274
+\c@collectmore=\count275
+\doublecol@number=\count276
+\multicoltolerance=\count277
+\multicolpretolerance=\count278
+\full@width=\dimen160
+\page@free=\dimen161
+\premulticols=\dimen162
+\postmulticols=\dimen163
+\multicolsep=\skip54
+\multicolbaselineskip=\skip55
+\partial@page=\box54
+\last@line=\box55
+\maxbalancingoverflow=\dimen164
+\mult@rightbox=\box56
+\mult@grightbox=\box57
+\mult@firstbox=\box58
+\mult@gfirstbox=\box59
+\@tempa=\box60
+\@tempa=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\c@minrows=\count279
+\c@columnbadness=\count280
+\c@finalcolumnbadness=\count281
+\last@try=\dimen165
+\multicolovershoot=\dimen166
+\multicolundershoot=\dimen167
+\mult@nat@firstbox=\box96
+\colbreak@box=\box97
+\mc@col@check@num=\count282
+)
 
-! LaTeX Error: File `bookmark.sty' not found.
+! LaTeX Error: File `colortbl.sty' not found.
 
 Type X to quit or <RETURN> to proceed,
 or enter new name. (Default extension: sty)
@@ -190,13 +265,13 @@ Enter file name:
 ! Emergency stop.
 <read *> 
          
-l.59 \IfFileExists
-                  {xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if a... 
+l.61 \usepackage
+                {ulem}^^M 
 Here is how much of TeX's memory you used:
- 3265 strings out of 480313
- 45331 string characters out of 5895529
- 335696 words of memory out of 5000000
- 21152 multiletter control sequences out of 15000+600000
+ 3474 strings out of 480313
+ 49127 string characters out of 5895529
+ 340837 words of memory out of 5000000
+ 21353 multiletter control sequences out of 15000+600000
  404193 words of font info for 28 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  55i,0n,62p,266b,38s stack positions out of 5000i,500n,10000p,200000b,80000s
