@@ -35,7 +35,7 @@ fig1 <- ggplot(sales_by_category,
 print(fig1)
 
 # Tolkning:
-# Electronics har högst total försäljning, följt av Home och Sports. Clothing och Beauty bidrar minst till den totala försäljningen.
+# Electronics har högst total försäljning, följt av Home och Sports. Fashion och Beauty bidrar minst till den totala försäljningen.
 
 # FIGUR 2 – Frågeställning 2: Hur skiljer sig ordervärde mellan olika kundsegment?
 
