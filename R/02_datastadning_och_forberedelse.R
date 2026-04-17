@@ -62,7 +62,11 @@ colSums(is.na(df_clean))
 
 df_clean <- df_clean %>%
   mutate(order_value = quantity * unit_price * (1 - discount_pct),
-         sales_percent = (total_sales / sum(total_sales))*100
+         shipping_category = case_when(
+           shipping_days <= 3 ~ "Fast",
+           shipping_days <= 5 ~ "Medium",
+           TRUE ~ "Long"),
+         shipping_category = as.factor(shipping_category)
          )
 
 glimpse(df_clean)
