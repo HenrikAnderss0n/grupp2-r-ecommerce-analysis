@@ -19,15 +19,7 @@ df_clean <- df_raw %>%
     campaign_source = str_to_title(campaign_source),
     campaign_source = str_replace_all(campaign_source, "Social Media", "Social"),
     order_date = as.Date(order_date),
-    returned = recode(returned, "Yes" = TRUE, "No" = FALSE, .default = NA),
-    city = as.factor(city),
-    customer_segment = as.factor(customer_segment),
-    customer_type = as.factor(customer_type),
-    region = as.factor(region),
-    product_category = as.factor(product_category),
-    product_subcategory = as.factor(product_subcategory),
-    payment_method = as.factor(payment_method),
-    campaign_source = as.factor(campaign_source),
+    returned = recode(returned, "Yes" = TRUE, "No" = FALSE, .default = NA)
   )
 
 glimpse(df_clean)
@@ -53,7 +45,15 @@ df_clean <- df_clean %>%
                            discount_pct),
     shipping_days = if_else(is.na(shipping_days), 
                             median(shipping_days, na.rm = TRUE), 
-                            shipping_days)
+                            shipping_days),
+    city = as.factor(city),
+    customer_segment = as.factor(customer_segment),
+    customer_type = as.factor(customer_type),
+    region = as.factor(region),
+    product_category = as.factor(product_category),
+    product_subcategory = as.factor(product_subcategory),
+    payment_method = as.factor(payment_method),
+    campaign_source = as.factor(campaign_source)
   )
 
 colSums(is.na(df_clean))
