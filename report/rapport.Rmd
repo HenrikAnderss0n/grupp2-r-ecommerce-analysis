@@ -30,7 +30,8 @@ Datat städades genom att:
 1. saknade numeriska värden ersattes med median
 2. saknade kategoriska värden ersattes med “unknown”
 3. kategoriska variabler standardiserades och konverterades till faktorer
-4. nya variabler (order_value, sales_percent) skapades
+4. nya variabler (order_value, order_size) skapades. 
+Order size baseras på ordervalue och kategoriseras i tre nivåer: low(<100), medium(100-300) och high(>300).
 
 Därefter genomfördes:
 
@@ -75,6 +76,11 @@ Electronics har högst total försäljning (155500), följt av Home och Sports. 
 
 source(here("R", "03_statistiska_sammanfattningar.R"))
 flextable(sales_by_segment)%>%
+  autofit()%>%
+  theme_vanilla()
+
+
+flextable(sales_by_segment_size)%>%
   autofit()%>%
   theme_vanilla()
 ```
