@@ -67,7 +67,7 @@ df_clean <- df_clean %>%
       order_value < 100 ~ "Low",
       order_value < 300 ~ "Medium",
       TRUE ~ "High"),
-    order_size = as.factor(order_size, levels = c("Low", "Medium", "High"))
+    order_size = factor(order_size, levels = c("Low", "Medium", "High"))
     )
 
 glimpse(df_clean)
