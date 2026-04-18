@@ -19,6 +19,7 @@ sales_by_category
 # Electronics har högst total försäljning (155500), följt av Home och Sports.
 
 
+
 # 2.Hur skiljer sig ordervärde mellan olika kundsegment?
 
 sales_by_segment <- df_clean %>% 
@@ -32,12 +33,28 @@ sales_by_segment <- df_clean %>%
   ) %>% 
   arrange(desc(total_sales))
 
+
+sales_by_segment_size <- df_clean %>%
+  group_by(customer_segment, order_size) %>%
+  summarise(
+    orders = n(),
+    .groups = "drop"
+  )
+
 sales_by_segment
+sales_by_segment_size
+
 
 # Resultat:
 # Consumer genererar mest total försäljning (170338),
 # medan Small Business spenderar mest per köp (346).
 # Corporate bidrar minst både i antal ordrar (169) och total försäljning (39744).
+
+# När vi analyserar orderstorlek (Low <100, Medium 100–300, High >300), ser vi att 
+# Consumer gör flest köp i alla kategorier (Low, Medium och High).
+# Small Business gör relativt många större köp i Medium och High,
+# medan Corporate har minst antal ordrar i alla kategorier.
+
 
 
 # 3.Hur skiljer sig försäljning mellan olika regioner?
@@ -58,9 +75,15 @@ sales_by_region <- df_clean %>%
 sales_by_region
 
 # Resultat:
-# North är den region som säljer mest totalt (116544) och har flest ordrar (354), 
+# North är den region som säljer mest totalt (116544),
+# 37.1% av den totala försäljningen, och har flest ordrar (354), 
 # medan East har högre värde per köp (337).
-# South säljer minst (53170) och har också lägre värde (277) per köp än andra regioner.
+# South säljer minst (53170), 16.9% av den totala försäljningen,
+# och har också lägre värde (277) per köp än andra regioner.
+
+
+
+# Sammanfattningstabell 
 
 summary_table <- tibble (
   category_top = sales_by_category$product_category[1],
@@ -71,9 +94,18 @@ summary_table <- tibble (
 summary_table
 
 # Sammanfattning:
-# Vi har beräknat statistiska sammanfattningar för att jämföra försäljning
-# mellan produktkategorier, kundsegment och regioner.
-# Electronics och Consumer står för den största delen av försäljningen.
-# Small Business spenderar mest per köp.
-# North är den starkaste regionen, medan South säljer minst.
+
+# Electronics står för den största delen av försäljningen inom produktkategorier.
+
+# I kundsegment är det Consumer som genererar mest total försäljning,
+# medan Small Business spenderar mest per köp.
+# När vi analyserar orderstorlek ser vi att Consumer gör flest köp i alla kategorier (Low, Medium och High),
+# medan Corporate har minst antal ordrar i alla kategorier.
+
+# När det gäller regioner är North den starkaste regionen, medan South säljer minst.
+
+
+
+
+
 
