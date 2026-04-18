@@ -58,15 +58,16 @@ df_clean <- df_clean %>%
 
 colSums(is.na(df_clean))
 
-# 2 nya variabler: ordervärde och leveranskategori
+# 2 nya variabler: ordervärde och orderstorlek
 
 df_clean <- df_clean %>%
-  mutate(order_value = quantity * unit_price * (1 - discount_pct),
-         shipping_category = case_when(
-           shipping_days <= 3 ~ "Fast",
-           shipping_days <= 5 ~ "Medium",
-           TRUE ~ "Long"),
-         shipping_category = as.factor(shipping_category)
-         )
+   mutate(
+    order_value = quantity * unit_price * (1 - discount_pct),
+    order_size = case_when(
+      order_value < 100 ~ "Low",
+      order_value < 300 ~ "Medium",
+      TRUE ~ "High"),
+    order_size = as.factor(order_size, levels = c("Low", "Medium", "High"))
+    )
 
 glimpse(df_clean)
