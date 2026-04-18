@@ -79,17 +79,29 @@ flextable(sales_by_segment)%>%
   autofit()%>%
   theme_vanilla()
 
+```
+
+
+```{r, echo=FALSE, fig.width=7, fig.asp=0.618, out.width="90%", fig.align='center'}
+knitr::include_graphics(here::here("fig2.png"))
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+source(here("R", "03_statistiska_sammanfattningar.R"))
 
 flextable(sales_by_segment_size)%>%
   autofit()%>%
   theme_vanilla()
 ```
 
-```{r, echo=FALSE, fig.width=7, fig.asp=0.618, out.width="90%", fig.align='center'}
-knitr::include_graphics(here::here("fig2.png"))
-```
-
 Consumer genererar mest total försäljning (170338), medan Small Business spenderar mest per köp (346). Corporate bidrar minst både i antal ordrar (169) och total försäljning (39744).
+
+När vi analyserar orderstorlek (Low <100, Medium 100–300, High >300), ser vi att.
+
+- Consumer gör flest köp i alla kategorier (Low, Medium och High).
+- Small Business gör relativt många större köp i Medium och High.
+- Medan Corporate har minst antal ordrar i alla kategorier.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
