@@ -16,17 +16,6 @@ Projektet använder filen:
 
 Datasetet innehåller **1000 observationer** och **16 variabler**.
 
-Exempel på variabler i datan:
-- orderdatum
-- kundsegment
-- kundtyp
-- region och stad
-- produktkategori
-- antal
-- styckpris
-- rabatt
-- leveranstid
-- returstatus
 
 ## Valda frågeställningar
 
@@ -34,7 +23,7 @@ Projektet utgår från följande frågeställningar:
 
 1. Vilka produktkategorier verkar driva högst försäljning?
 2. Hur skiljer sig ordervärde mellan olika kundsegment?
-3. Hur skiljer sig försäljning mellan olika regioner?
+3. Hur skiljer sig försäljning mellan olika regioner? *(egen frågeställning)*
 
 ## Metod
 
@@ -46,36 +35,25 @@ Analysen genomfördes i flera steg:
 - visualisering i R
 - tolkning av resultat
 
-I datastädningen standardiserades textvärden, saknade värden hanterades och nya variabler skapades för att stödja analysen, bland annat:
+I datastädningen standardiserades textvärden, saknade värden hanterades och nya variabler skapades för att stödja analysen:
 
 - `order_value`
-- `shipping_category`
+- `order_size`
 
-## Projektstruktur
+## Filer
 
-- `data/` – innehåller datasetet `ecommerce_orders.csv`
-- `R/` – innehåller skript för analysen
-- `report/` – innehåller rapportens källfil och färdiga rapportversioner
-- `README.md` – projektbeskrivning
-- `grupp2-r-ecommerce-analysis.Rproj` – projektfil för RStudio
+- `R/01_dataforstaelse.R` läser in och undersöker data
+- `R/02_datastadning_och_forberedelse.R` städar och förbereder data
+- `R/03_statistiska_sammanfattningar.R` gör de statistiska sammanfattningarna
+- `R/04_visualisering.R` skapar visualiseringar
+- `run_analysis.R` kör hela projektet i rätt ordning
+- `report/` innehåller rapportens källfil och färdiga rapportversioner
+- `README.md` är projektets beskrivning
+- `grupp2-r-ecommerce-analysis.Rproj` är projektfilen för RStudio
 
-## Hur man kör projektet
+## Så kör du projektet
 
-1. Klona repot från GitHub
-2. Öppna projektfilen `grupp2-r-ecommerce-analysis.Rproj` i RStudio
-3. Installera vid behov de paket som används i projektet
-4. Kör skriptfilerna i rätt ordning från mappen `R/`
-
-Nuvarande ordning:
-
-1. `01_dataforstaelse.R`
-2. `02_datastadning_och_forberedelse.R`
-3. `03_statistiska_sammanfattningar.R`
-4. `04_visualisering.R`
-
-## OBS
-
-**Kom ihåg att lägga till `00_main.R` när all kod är helt färdig, så att projektet kan köras i rätt ordning via `source()`.**
+Öppna projektet i RStudio och kör `run_analysis.R`.
 
 ## Paket
 
@@ -92,7 +70,7 @@ Projektet använder följande paket:
 - Azar: visualisering
 - Henry: tolkning, slutsatser och rapport/presentation
 
-PowerPoint-presentationen och talmanusen har tagits fram gemensamt av gruppen.
+PowerPoint-presentationen har tagits fram gemensamt av gruppen.
 
 ## Resultat i korthet
 
