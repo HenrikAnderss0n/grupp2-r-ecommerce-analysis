@@ -3,13 +3,43 @@ title: "e-handelsanalysrapport"
 author: "Grupp 2"
 date: "10/04/2026"
 output:
-  pdf_document: default
   word_document: default
+  pdf_document: default
 ---
 
 
 # Introduktion till datan
 Målet med denna analys är att vägleda beslutsfattande utifrån försäljningsdata från orter runt om i Sverige.Datan bestod av 1000 unika beställningar från 255 kunder, inklusive privatpersoner, företag och småföretag.
+
+# Syfte med analysen
+Syftet med analysen är att undersöka försäljningsdata för att förstå vilka produkter som säljer mest, vilka kunder som bidrar mest till försäljningen och hur försäljningen skiljer sig mellan olika regioner.
+
+# valda frågeställningar
+Vi har fokuserat på att besvara följande frågor:
+
+1. Vilka produktkategorier verkar driva högst försäljning?
+
+2. Hur skiljer sig ordervärde mellan olika kundsegment?
+
+3. Hur skiljer sig försäljning mellan olika regioner?
+
+# Metod för analysen
+Analysen genomfördes i R. Datasetet innehåller både numeriska och kategoriska variabler såsom ordrar, kunder, produktkategorier och rabatter.
+Datat städades genom att:
+
+1. saknade numeriska värden ersattes med median
+2. saknade kategoriska värden ersattes med “unknown”
+3. kategoriska variabler standardiserades och konverterades till faktorer
+4. nya variabler (order_value, order_size) skapades. 
+Order size baseras på ordervalue och kategoriseras i tre nivåer: low(<100), medium(100-300) och high(>300).
+
+Därefter genomfördes:
+
+1. beskrivande statistik
+2. visualiseringar
+3. tolkning och slutsatse
+
+# viktigaste resultat
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, include = FALSE}
 #load libraries 
@@ -22,7 +52,7 @@ source(here("R", "02_datastadning_och_forberedelse.R"))
 ```
 
 
-# Vad ni kom fram till
+## Vad ni kom fram till
 
 
 
@@ -35,11 +65,11 @@ flextable(sales_by_category)%>%
 
 ```
 
-```{r, echo=FALSE, out.width="50%", fig.width=16, fig.height=8}
+```{r, echo=FALSE, fig.width=7, fig.asp=0.618, out.width="90%", fig.align='center'}
 knitr::include_graphics(here::here("fig1.png"))
 ```
 
-Electronics har högst total försäljning (155500), följt av Home och Sports.
+Electronics har högst total försäljning (155500), följt av Home och Sports. Fashion och Beauty bidrar minst till den totala försäljningen.
 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
@@ -48,13 +78,30 @@ source(here("R", "03_statistiska_sammanfattningar.R"))
 flextable(sales_by_segment)%>%
   autofit()%>%
   theme_vanilla()
+
 ```
 
-```{r, echo=FALSE, out.width="50%",fig.width=16, fig.height=8}
+
+```{r, echo=FALSE, fig.width=7, fig.asp=0.618, out.width="90%", fig.align='center'}
 knitr::include_graphics(here::here("fig2.png"))
 ```
 
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+source(here("R", "03_statistiska_sammanfattningar.R"))
+
+flextable(sales_by_segment_size)%>%
+  autofit()%>%
+  theme_vanilla()
+```
+
 Consumer genererar mest total försäljning (170338), medan Small Business spenderar mest per köp (346). Corporate bidrar minst både i antal ordrar (169) och total försäljning (39744).
+
+När vi analyserar orderstorlek (Low <100, Medium 100–300, High >300), ser vi att.
+
+- Consumer gör flest köp i alla kategorier (Low, Medium och High).
+- Small Business gör relativt många större köp i Medium och High.
+- Medan Corporate har minst antal ordrar i alla kategorier.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
@@ -66,7 +113,7 @@ flextable(sales_by_region)%>%
 
 ```
 
-```{r, echo=FALSE, out.width="50%",fig.width=16, fig.height=8}
+```{r, echo=FALSE, fig.width=7, fig.asp=0.618, out.width="90%", fig.align='center'}
 knitr::include_graphics(here::here("fig3.png"))
 ```
 
@@ -91,4 +138,16 @@ Vi har beräknat statistiska sammanfattningar för att jämföra försäljning.
 
 
 # Vilka begränsningar som finns i datan eller analysen
-Analysen bygger på ett dataset med 1000 ordrar och visar därför bara mönster i detta urval. Vissa värden saknades i datan och har ersatts vid datastädningen, vilket kan påverka resultaten något.
+
+- Analysen bygger på ett dataset med 1000 ordrar och visar därför bara mönster i detta urval.
+- Vissa värden saknades i datan och har ersatts vid datastädningen, vilket kan påverka resultaten något(bias).
+
+- Analysen är baserad på historiska data och kan inte förutsäga framtida
+trender eller förändringar i kundbeteende.
+
+## Förslag på nästa steg
+För att bygga vidare på denna analys
+
+- Samla in mer data över en längre tidsperiod för att identifiera trender.
+- Genomföra mer avancerade analyser, såsom klusteranalys eller prediktiv modellering, för att bättre förstå kundsegment och förutsäga framtida försäljning.
+
