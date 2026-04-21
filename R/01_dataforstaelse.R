@@ -1,6 +1,6 @@
 library(tidyverse)
 
-df_raw <- read_csv(here("data", "ecommerce_orders.csv"))
+df_raw <- read_csv("data/ecommerce_orders.csv")
 
 dim(df_raw)
 names(df_raw)
