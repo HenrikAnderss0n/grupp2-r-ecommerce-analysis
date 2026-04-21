@@ -1,5 +1,4 @@
 library(here)
-source(here("R", "01_dataforstaelse.R"))
 df_raw
 unique(df_raw$city)
 
