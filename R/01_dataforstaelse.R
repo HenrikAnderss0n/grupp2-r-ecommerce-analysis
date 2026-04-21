@@ -1,4 +1,3 @@
-library(here)
 library(tidyverse)
 
 df_raw <- read_csv(here("data", "ecommerce_orders.csv"))
