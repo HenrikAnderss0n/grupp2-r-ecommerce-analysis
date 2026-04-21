@@ -99,8 +99,8 @@ summary_table
 
 # I kundsegment är det Consumer som genererar mest total försäljning,
 # medan Small Business spenderar mest per köp.
-# När vi analyserar orderstorlek ser vi att Consumer gör flest köp i alla kategorier (Low, Medium och High),
-# medan Corporate har minst antal ordrar i alla kategorier.
+# När vi analyserar orderstorlek ser vi att Consumer gör flest köp i alla orderstorlekar (Low, Medium och High),
+# medan Corporate har minst antal ordrar i alla orderstorlekar.
 
 # När det gäller regioner är North den starkaste regionen, medan South säljer minst.
 
