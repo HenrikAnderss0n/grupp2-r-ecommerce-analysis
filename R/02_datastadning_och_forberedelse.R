@@ -1,4 +1,3 @@
-library(here)
 df_raw
 unique(df_raw$city)
 
