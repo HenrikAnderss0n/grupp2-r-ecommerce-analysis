@@ -1,3 +1,4 @@
+library(here)
 library(tidyverse)
 
 df_raw <- read_csv("data/ecommerce_orders.csv")

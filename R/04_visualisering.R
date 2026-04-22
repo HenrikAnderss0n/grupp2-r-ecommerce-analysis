@@ -1,6 +1,5 @@
 library(tidyverse)
-source("R/01_dataforstaelse.R")
-source("R/02_datastadning_och_forberedelse.R")
+library(here)
 
 # FIGUR 1 – Frågeställning 1: Vilka produktkategorier driver högst försäljning?
 
