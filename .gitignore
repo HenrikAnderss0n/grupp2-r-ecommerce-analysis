@@ -51,3 +51,9 @@ rsconnect/
 .RData
 .Rhistory
 README.html
+
+# Mac-specifika filer
+.DS_Store
+
+# R output
+Rplots.pdf

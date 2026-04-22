@@ -1,7 +1,5 @@
 library(tidyverse)
 library(here)
-source(here("R","01_dataforstaelse.R"))
-source(here("R", "02_datastadning_och_forberedelse.R"))
 
 # FIGUR 1 – Frågeställning 1: Vilka produktkategorier driver högst försäljning?
 
