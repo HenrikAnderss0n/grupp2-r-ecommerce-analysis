@@ -13,7 +13,7 @@ sales_by_category <- df_clean %>%
   ) %>% 
   arrange(desc(total_sales))
 
-sales_by_category
+print(sales_by_category)
 
 # Resultat:
 # Electronics har högst total försäljning (155500), följt av Home och Sports.
@@ -41,8 +41,8 @@ sales_by_segment_size <- df_clean %>%
     .groups = "drop"
   )
 
-sales_by_segment
-sales_by_segment_size
+print(sales_by_segment)
+print(sales_by_segment_size)
 
 
 # Resultat:
@@ -72,7 +72,7 @@ sales_by_region <- df_clean %>%
   ) %>% 
   arrange(desc(total_sales))
 
-sales_by_region
+print(sales_by_region)
 
 # Resultat:
 # North är den region som säljer mest totalt (116544),
@@ -91,7 +91,7 @@ summary_table <- tibble (
   region_top = sales_by_region$region[1]
 )
 
-summary_table
+print(summary_table)
 
 # Sammanfattning:
 
