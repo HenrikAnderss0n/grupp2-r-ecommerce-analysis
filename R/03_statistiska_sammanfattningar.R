@@ -51,7 +51,7 @@ Consumer genererar mest total försäljning (170338),
 medan Small Business spenderar mest per köp (346).
 Corporate bidrar minst både i antal ordrar (169) och total försäljning (39744).
 
-När vi analyserar orderstorlek (Low <100, Medium 100–300, High >300), ser vi att
+När vi analyserar orderstorlek (Low <100, Medium 100–299, High ≥300), ser vi att
 Consumer gör flest köp i alla orderstorlekar (Low, Medium och High).
 Small Business gör relativt många större köp i Medium och High,
 medan Corporate har minst antal ordrar i alla orderstorlekar.\n")
