@@ -1,6 +1,6 @@
 library(tidyverse)
 
-# 1.Vilka produktkategorier verkar driva högst försäljning? 
+cat("\n1.Vilka produktkategorier verkar driva högst försäljning?\n") 
 
 sales_by_category <- df_clean %>% 
   group_by(product_category) %>% 
@@ -15,12 +15,12 @@ sales_by_category <- df_clean %>%
 
 print(sales_by_category)
 
-# Resultat:
-# Electronics har högst total försäljning (155500), följt av Home och Sports.
+cat ("\nResultat:
+
+Electronics har högst total försäljning (155500), följt av Home och Sports.\n")
 
 
-
-# 2.Hur skiljer sig ordervärde mellan olika kundsegment?
+cat("\n2.Hur skiljer sig ordervärde mellan olika kundsegment?\n")
 
 sales_by_segment <- df_clean %>% 
   group_by(customer_segment) %>% 
@@ -45,19 +45,20 @@ print(sales_by_segment)
 print(sales_by_segment_size)
 
 
-# Resultat:
-# Consumer genererar mest total försäljning (170338),
-# medan Small Business spenderar mest per köp (346).
-# Corporate bidrar minst både i antal ordrar (169) och total försäljning (39744).
+cat ("\nResultat:
 
-# När vi analyserar orderstorlek (Low <100, Medium 100–300, High >300), ser vi att 
-# Consumer gör flest köp i alla orderstorlekar (Low, Medium och High).
-# Small Business gör relativt många större köp i Medium och High,
-# medan Corporate har minst antal ordrar i alla orderstorlekar.
+Consumer genererar mest total försäljning (170338),
+medan Small Business spenderar mest per köp (346).
+Corporate bidrar minst både i antal ordrar (169) och total försäljning (39744).
+
+När vi analyserar orderstorlek (Low <100, Medium 100–300, High >300), ser vi att
+Consumer gör flest köp i alla orderstorlekar (Low, Medium och High).
+Small Business gör relativt många större köp i Medium och High,
+medan Corporate har minst antal ordrar i alla orderstorlekar.\n")
 
 
 
-# 3.Hur skiljer sig försäljning mellan olika regioner?
+cat ("\n3.Hur skiljer sig försäljning mellan olika regioner?\n")
 
 sales_by_region <- df_clean %>% 
   group_by(region) %>% 
@@ -74,16 +75,17 @@ sales_by_region <- df_clean %>%
 
 print(sales_by_region)
 
-# Resultat:
-# North är den region som säljer mest totalt (116544),
-# 37.1% av den totala försäljningen, och har flest ordrar (354), 
-# medan East har högre värde per köp (337).
-# South säljer minst (53170), 16.9% av den totala försäljningen,
-# och har också lägre värde (277) per köp än andra regioner.
+cat ("\nResultat:
+
+North är den region som säljer mest totalt (116544), 
+37.1% av den totala försäljningen, och har flest ordrar (354), 
+medan East har högre värde per köp (337).
+South säljer minst (53170), 16.9% av den totala försäljningen,
+och har också lägre värde (277) per köp än andra regioner.\n" )
 
 
 
-# Sammanfattningstabell 
+cat ("\nSammanfattningstabell\n")
 
 summary_table <- tibble (
   category_top = sales_by_category$product_category[1],
@@ -93,16 +95,16 @@ summary_table <- tibble (
 
 print(summary_table)
 
-# Sammanfattning:
+cat ("\nSammanfattning:
 
-# Electronics står för den största delen av försäljningen inom produktkategorier.
+Electronics står för den största delen av försäljningen inom produktkategorier. 
 
-# I kundsegment är det Consumer som genererar mest total försäljning,
-# medan Small Business spenderar mest per köp.
-# När vi analyserar orderstorlek ser vi att Consumer gör flest köp i alla orderstorlekar (Low, Medium och High),
-# medan Corporate har minst antal ordrar i alla orderstorlekar.
+I kundsegment är det Consumer som genererar mest total försäljning,
+medan Small Business spenderar mest per köp.
+När vi analyserar orderstorlek ser vi att Consumer gör flest köp i alla orderstorlekar (Low, Medium och High),
+medan Corporate har minst antal ordrar i alla orderstorlekar.
 
-# När det gäller regioner är North den starkaste regionen, medan South säljer minst.
+När det gäller regioner är North den starkaste regionen, medan South säljer minst.\n")
 
 
 
