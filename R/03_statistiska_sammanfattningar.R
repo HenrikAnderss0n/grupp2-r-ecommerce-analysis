@@ -85,12 +85,13 @@ och har också lägre värde (277) per köp än andra regioner.\n" )
 
 
 
-cat ("\nSammanfattningstabell\n")
+cat("\nSammanfattningstabell
+(högst total försäljning)\n")
 
 summary_table <- tibble (
-  category_top = sales_by_category$product_category[1],
-  segment_top = sales_by_segment$customer_segment[1],
-  region_top = sales_by_region$region[1]
+  "Produktkategori" = sales_by_category$product_category[1],
+  "Kundsegment" = sales_by_segment$customer_segment[1],
+  "Region" = sales_by_region$region[1]
 )
 
 print(summary_table)
